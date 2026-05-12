@@ -1,8 +1,31 @@
 # top10stocks
 
-A simple static site showing the top 10 US stocks by market cap, updated once daily after market close.
+Static site showing the top 10 US stocks by market cap with daily closing prices and % change. No API key required.
 
-**Stack:** GitHub Pages + Cloudflare DNS + GitHub Actions + Anthropic API (web search)
+**Live at:** `https://niteshade.github.io/top10stocks`
+
+---
+
+## Stack
+
+| Layer | Tool |
+|---|---|
+| Hosting | GitHub Pages |
+| DNS | Cloudflare (optional custom domain) |
+| Data pipeline | GitHub Actions + Python + yfinance |
+| Schedule | Weekdays at 9:30 PM UTC (5:30 PM ET) |
+
+---
+
+## File structure
+
+```
+top10stocks/
+├── index.html                   # the site — reads from data/stocks.json
+├── data/stocks.json             # updated daily by the Action
+├── scripts/fetch_stocks.py      # fetches prices via yfinance, writes stocks.json
+└── .github/workflows/update.yml # cron job, runs Mon–Fri after market close
+```
 
 ---
 
@@ -10,45 +33,46 @@ A simple static site showing the top 10 US stocks by market cap, updated once da
 
 ### 1. Enable GitHub Pages
 
-In your repo: **Settings → Pages → Source → Deploy from branch → `main` / `/ (root)`**
+**Settings → Pages → Source → Deploy from branch → `main` / `/ (root)`**
 
-Your site will be live at `https://yourusername.github.io/top10stocks`
+The site will be live at `https://<your-username>.github.io/top10stocks`.
 
-### 2. Add your Anthropic API key
+### 2. Trigger the first data fetch
 
-In your repo: **Settings → Secrets and variables → Actions → New repository secret**
+The cron only fires on weekdays. To populate the data immediately:
 
-- Name: `ANTHROPIC_API_KEY`
-- Value: your key from [console.anthropic.com](https://console.anthropic.com)
+**Actions → Update Stock Data → Run workflow**
 
-### 3. Point Cloudflare to GitHub Pages
+### 3. Custom domain via Cloudflare (optional)
 
-In Cloudflare DNS, add:
+Add a DNS record in Cloudflare:
 
-| Type  | Name       | Content                          | Proxy |
-|-------|------------|----------------------------------|-------|
-| CNAME | `@` or subdomain | `yourusername.github.io` | **DNS only** (grey cloud) |
+| Type | Name | Content | Proxy status |
+|---|---|---|---|
+| CNAME | `@` (or subdomain) | `niteshade.github.io` | **DNS only** (grey cloud) |
 
-Then in your repo add a file called `CNAME` containing just your domain, e.g.:
+> The proxy must be off — GitHub Pages handles TLS itself and won't provision a cert through Cloudflare's proxy.
+
+Then add a `CNAME` file to the repo root containing just your domain:
+
 ```
 stocks.yourdomain.com
 ```
 
-In GitHub Pages settings, set your custom domain to match.
-
-### 4. Trigger the first data fetch
-
-Go to **Actions → Update Stock Data → Run workflow** to populate `data/stocks.json` immediately without waiting for the nightly cron.
+And set the custom domain in **Settings → Pages → Custom domain**.
 
 ---
 
-## How it works
+## How the data pipeline works
 
-- `index.html` — static page, reads from `data/stocks.json`
-- `data/stocks.json` — pre-built data file, committed by the Action
-- `scripts/fetch-stocks.js` — calls Anthropic API with web search to get closing prices
-- `.github/workflows/update.yml` — runs Mon–Fri at 9:30 PM UTC (5:30 PM ET)
+`scripts/fetch_stocks.py` runs inside GitHub Actions on a weekday cron. It fetches the last 5 trading days of history for each ticker via `yfinance`, computes the daily % change between the two most recent closes, and writes `data/stocks.json`. The Action then commits and pushes that file back to `main`, which triggers a Pages redeploy.
+
+Using 5 days of history (instead of 2) ensures the script always has at least 2 data points even after long weekends or market holidays.
+
+If any ticker fails to return data the script exits with a non-zero code, turning the Action red — so failures are visible rather than silently writing bad data.
+
+---
 
 ## Manual update
 
-From the Actions tab, click **"Run workflow"** on the Update Stock Data workflow anytime.
+**Actions → Update Stock Data → Run workflow**
