@@ -129,8 +129,9 @@
     }
 
     .rank {
-      color: var(--muted);
-      font-size: 0.68rem;
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 500;
       width: 28px;
     }
 
@@ -264,7 +265,7 @@
         <td class="rank">${s.rank}</td>
         <td class="ticker">${esc(s.ticker)}</td>
         <td class="name">${esc(s.name)}</td>
-        <td class="price">$${esc(String(s.price))}</td>
+        <td class="price">$${esc(s.price.toFixed(2))}</td>
         <td class="change ${s.changePositive ? "up" : "down"}">${esc(s.change)}</td>
       </tr>`).join("");
   }
