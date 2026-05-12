@@ -1,4 +1,5 @@
 import json
+import sys
 import datetime
 import yfinance as yf
 
@@ -16,17 +17,18 @@ STOCKS = [
 ]
 
 def fetch():
-    tickers = [t for t, _ in STOCKS]
-    data = yf.download(tickers, period="2d", auto_adjust=True, progress=False)
-
     results = []
+    errors = []
+
     for rank, (ticker, name) in enumerate(STOCKS, start=1):
         try:
-            closes = data["Close"][ticker].dropna()
+            hist = yf.Ticker(ticker).history(period="5d")
+            closes = hist["Close"].dropna()
             if len(closes) < 2:
-                raise ValueError("Not enough data")
-            prev, curr = float(closes.iloc[-2]), float(closes.iloc[-1])
-            pct = (curr - prev) / prev * 100
+                raise ValueError(f"only {len(closes)} trading day(s) returned")
+            prev = float(closes.iloc[-2])
+            curr = float(closes.iloc[-1])
+            pct  = (curr - prev) / prev * 100
             sign = "+" if pct >= 0 else ""
             results.append({
                 "rank": rank,
@@ -36,17 +38,21 @@ def fetch():
                 "change": f"{sign}{pct:.2f}%",
                 "changePositive": pct >= 0,
             })
-            print(f"  {ticker:6s}  ${curr:.2f}  {sign}{pct:.2f}%")
-        except Exception as e:
-            print(f"  {ticker:6s}  ERROR: {e}")
+            print(f"  {ticker:6s}  ${curr:>9.2f}  {sign}{pct:.2f}%", flush=True)
+        except Exception as exc:
+            msg = f"{ticker}: {exc}"
+            print(f"  ERROR  {msg}", flush=True)
+            errors.append(msg)
+
+    if errors:
+        print(f"\n✗ {len(errors)} ticker(s) failed: {', '.join(errors)}", flush=True)
+        sys.exit(1)
 
     today = datetime.date.today().isoformat()
-    out = {"updated": today, "stocks": results}
-
+    payload = {"updated": today, "stocks": results}
     with open("data/stocks.json", "w") as f:
-        json.dump(out, f, indent=2)
-
-    print(f"\n✓ Wrote {len(results)} stocks to data/stocks.json ({today})")
+        json.dump(payload, f, indent=2)
+    print(f"\n✓ Wrote {len(results)} stocks → data/stocks.json  ({today})", flush=True)
 
 if __name__ == "__main__":
     fetch()
