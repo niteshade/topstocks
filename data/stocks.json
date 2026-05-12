@@ -1,0 +1,15 @@
+{
+  "updated": "2025-01-01",
+  "stocks": [
+    { "rank": 1, "ticker": "AAPL", "name": "Apple Inc.", "price": 0, "change": "+0.00%" , "changePositive": true },
+    { "rank": 2, "ticker": "MSFT", "name": "Microsoft Corp.", "price": 0, "change": "+0.00%", "changePositive": true },
+    { "rank": 3, "ticker": "NVDA", "name": "NVIDIA Corp.", "price": 0, "change": "+0.00%", "changePositive": true },
+    { "rank": 4, "ticker": "AMZN", "name": "Amazon.com Inc.", "price": 0, "change": "+0.00%", "changePositive": true },
+    { "rank": 5, "ticker": "GOOGL", "name": "Alphabet Inc.", "price": 0, "change": "+0.00%", "changePositive": true },
+    { "rank": 6, "ticker": "META", "name": "Meta Platforms Inc.", "price": 0, "change": "+0.00%", "changePositive": true },
+    { "rank": 7, "ticker": "TSLA", "name": "Tesla Inc.", "price": 0, "change": "+0.00%", "changePositive": true },
+    { "rank": 8, "ticker": "BRK.B", "name": "Berkshire Hathaway", "price": 0, "change": "+0.00%", "changePositive": true },
+    { "rank": 9, "ticker": "LLY", "name": "Eli Lilly & Co.", "price": 0, "change": "+0.00%", "changePositive": true },
+    { "rank": 10, "ticker": "JPM", "name": "JPMorgan Chase", "price": 0, "change": "+0.00%", "changePositive": true }
+  ]
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top 10 US Stocks</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f2eb;
+      --ink: #111010;
+      --rule: #c8c3b8;
+      --accent: #d4380d;
+      --green: #237804;
+      --red: #d4380d;
+      --muted: #7a7570;
+      --mono: 'IBM Plex Mono', monospace;
+      --display: 'Bebas Neue', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--mono);
+      min-height: 100vh;
+      padding: 48px 24px 80px;
+    }
+
+    .container { max-width: 720px; margin: 0 auto; }
+
+    /* Header */
+    header {
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding: 16px 0 14px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 7vw, 4.2rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .meta .label {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+    }
+
+    .meta .date {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead tr {
+      border-bottom: 1px solid var(--ink);
+    }
+
+    th {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+      padding: 0 0 10px;
+      text-align: left;
+    }
+
+    th.right { text-align: right; }
+
+    tbody tr {
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: appear 0.35s forwards;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    td {
+      padding: 13px 0;
+      font-size: 0.82rem;
+      vertical-align: middle;
+    }
+
+    .rank {
+      color: var(--muted);
+      font-size: 0.68rem;
+      width: 28px;
+    }
+
+    .ticker {
+      font-weight: 500;
+      font-size: 0.9rem;
+      width: 72px;
+    }
+
+    .name {
+      color: var(--muted);
+      font-size: 0.72rem;
+      padding-right: 16px;
+    }
+
+    .price { text-align: right; width: 90px; }
+
+    .change {
+      text-align: right;
+      width: 88px;
+      font-weight: 500;
+    }
+
+    .up   { color: var(--green); }
+    .down { color: var(--red); }
+
+    /* Loading / error */
+    .state-row td {
+      padding: 48px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      font-size: 0.62rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Top <em>10</em><br>US Stocks</h1>
+    <div class="meta">
+      <span class="label">As of</span>
+      <span class="date" id="dateLabel">—</span>
+    </div>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Ticker</th>
+        <th>Company</th>
+        <th class="right">Price</th>
+        <th class="right">Day</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <tr class="state-row"><td colspan="5">Loading…</td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    Prices reflect end-of-day closing data, updated once daily after US market close (4 PM ET).<br>
+    Data sourced via AI-assisted web search. Not financial advice.
+  </footer>
+</div>
+
+<script>
+  async function load() {
+    try {
+      const res = await fetch("data/stocks.json?t=" + Date.now());
+      if (!res.ok) throw new Error("fetch failed");
+      const { updated, stocks } = await res.json();
+
+      document.getElementById("dateLabel").textContent = updated
+        ? new Date(updated + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+        : "—";
+
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML = stocks.map((s, i) => `
+        <tr style="animation-delay:${i * 45}ms">
+          <td class="rank">${s.rank}</td>
+          <td class="ticker">${esc(s.ticker)}</td>
+          <td class="name">${esc(s.name)}</td>
+          <td class="price">$${esc(String(s.price))}</td>
+          <td class="change ${s.changePositive ? "up" : "down"}">${esc(s.change)}</td>
+        </tr>`).join("");
+    } catch {
+      document.getElementById("tableBody").innerHTML =
+        `<tr class="state-row"><td colspan="5">Unable to load data.</td></tr>`;
+    }
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, c =>
+      ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+  }
+
+  load();
+</script>
+</body>
+</html>
