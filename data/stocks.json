@@ -1,85 +1,85 @@
 {
-  "updated": "2026-05-11",
+  "updated": "2026-05-12",
   "stocks": [
     {
       "rank": 1,
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "price": 292.68,
-      "change": "-0.13%",
-      "changePositive": false
+      "price": 294.8,
+      "change": "+0.72%",
+      "changePositive": true
     },
     {
       "rank": 2,
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
-      "price": 412.66,
-      "change": "-0.59%",
+      "price": 407.77,
+      "change": "-1.18%",
       "changePositive": false
     },
     {
       "rank": 3,
       "ticker": "NVDA",
       "name": "NVIDIA Corp.",
-      "price": 219.44,
-      "change": "+1.97%",
+      "price": 220.78,
+      "change": "+0.61%",
       "changePositive": true
     },
     {
       "rank": 4,
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
-      "price": 268.99,
-      "change": "-1.35%",
+      "price": 265.82,
+      "change": "-1.18%",
       "changePositive": false
     },
     {
       "rank": 5,
       "ticker": "GOOGL",
       "name": "Alphabet Inc.",
-      "price": 388.64,
-      "change": "-3.03%",
+      "price": 387.35,
+      "change": "-0.33%",
       "changePositive": false
     },
     {
       "rank": 6,
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "price": 598.86,
-      "change": "-1.77%",
-      "changePositive": false
+      "price": 603.0,
+      "change": "+0.69%",
+      "changePositive": true
     },
     {
       "rank": 7,
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "price": 445.0,
-      "change": "+3.89%",
-      "changePositive": true
+      "price": 433.45,
+      "change": "-2.60%",
+      "changePositive": false
     },
     {
       "rank": 8,
       "ticker": "BRK-B",
       "name": "Berkshire Hathaway",
-      "price": 479.55,
-      "change": "+0.76%",
+      "price": 484.96,
+      "change": "+1.13%",
       "changePositive": true
     },
     {
       "rank": 9,
       "ticker": "LLY",
       "name": "Eli Lilly & Co.",
-      "price": 966.99,
-      "change": "+1.95%",
+      "price": 989.87,
+      "change": "+2.37%",
       "changePositive": true
     },
     {
       "rank": 10,
       "ticker": "JPM",
       "name": "JPMorgan Chase",
-      "price": 300.0,
-      "change": "-0.70%",
-      "changePositive": false
+      "price": 304.88,
+      "change": "+1.63%",
+      "changePositive": true
     }
   ]
 }
