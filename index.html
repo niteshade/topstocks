@@ -95,6 +95,22 @@
 
     th.right { text-align: right; }
 
+    th.sortable {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    th.sortable:hover { color: var(--ink); }
+
+    th.sortable::after {
+      content: ' ↕';
+      opacity: 0.3;
+      font-size: 0.55rem;
+    }
+
+    th.sort-asc::after  { content: ' ↑'; opacity: 1; }
+    th.sort-desc::after { content: ' ↓'; opacity: 1; }
+
     tbody tr {
       border-bottom: 1px solid var(--rule);
       opacity: 0;
@@ -175,10 +191,10 @@
     <thead>
       <tr>
         <th></th>
-        <th>Ticker</th>
-        <th>Company</th>
-        <th class="right">Price</th>
-        <th class="right">Day</th>
+        <th class="sortable" data-col="ticker">Ticker</th>
+        <th class="sortable" data-col="name">Company</th>
+        <th class="sortable right" data-col="price">Price</th>
+        <th class="sortable right" data-col="change">Day</th>
       </tr>
     </thead>
     <tbody id="tableBody">
@@ -193,6 +209,10 @@
 </div>
 
 <script>
+  let allStocks = [];
+  let sortCol = null;
+  let sortAsc = true;
+
   async function load() {
     try {
       const res = await fetch("data/stocks.json?t=" + Date.now());
@@ -203,19 +223,50 @@
         ? new Date(updated + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
         : "—";
 
-      const tbody = document.getElementById("tableBody");
-      tbody.innerHTML = stocks.map((s, i) => `
-        <tr style="animation-delay:${i * 45}ms">
-          <td class="rank">${s.rank}</td>
-          <td class="ticker">${esc(s.ticker)}</td>
-          <td class="name">${esc(s.name)}</td>
-          <td class="price">$${esc(String(s.price))}</td>
-          <td class="change ${s.changePositive ? "up" : "down"}">${esc(s.change)}</td>
-        </tr>`).join("");
+      allStocks = stocks;
+      render(allStocks);
+
+      document.querySelectorAll("th.sortable").forEach(th => {
+        th.addEventListener("click", () => {
+          const col = th.dataset.col;
+          if (sortCol === col) {
+            sortAsc = !sortAsc;
+          } else {
+            sortCol = col;
+            sortAsc = true;
+          }
+          document.querySelectorAll("th.sortable").forEach(h => {
+            h.classList.remove("sort-asc", "sort-desc");
+          });
+          th.classList.add(sortAsc ? "sort-asc" : "sort-desc");
+
+          const sorted = [...allStocks].sort((a, b) => {
+            let av = a[col], bv = b[col];
+            if (col === "change") {
+              av = parseFloat(av);
+              bv = parseFloat(bv);
+            }
+            if (typeof av === "string") return sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+            return sortAsc ? av - bv : bv - av;
+          });
+          render(sorted);
+        });
+      });
     } catch {
       document.getElementById("tableBody").innerHTML =
         `<tr class="state-row"><td colspan="5">Unable to load data.</td></tr>`;
     }
+  }
+
+  function render(stocks) {
+    document.getElementById("tableBody").innerHTML = stocks.map((s, i) => `
+      <tr style="animation-delay:${i * 45}ms">
+        <td class="rank">${s.rank}</td>
+        <td class="ticker">${esc(s.ticker)}</td>
+        <td class="name">${esc(s.name)}</td>
+        <td class="price">$${esc(String(s.price))}</td>
+        <td class="change ${s.changePositive ? "up" : "down"}">${esc(s.change)}</td>
+      </tr>`).join("");
   }
 
   function esc(s) {
