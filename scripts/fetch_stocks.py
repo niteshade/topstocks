@@ -22,7 +22,8 @@ def fetch():
 
     for rank, (ticker, name) in enumerate(STOCKS, start=1):
         try:
-            hist = yf.Ticker(ticker).history(period="5d")
+            t = yf.Ticker(ticker)
+            hist = t.history(period="5d")
             closes = hist["Close"].dropna()
             if len(closes) < 2:
                 raise ValueError(f"only {len(closes)} trading day(s) returned")
@@ -30,6 +31,7 @@ def fetch():
             curr = float(closes.iloc[-1])
             pct  = (curr - prev) / prev * 100
             sign = "+" if pct >= 0 else ""
+            market_cap = t.info.get("marketCap") or None
             results.append({
                 "rank": rank,
                 "ticker": ticker,
@@ -37,8 +39,10 @@ def fetch():
                 "price": round(curr, 2),
                 "change": f"{sign}{pct:.2f}%",
                 "changePositive": pct >= 0,
+                "marketCap": market_cap,
             })
-            print(f"  {ticker:6s}  ${curr:>9.2f}  {sign}{pct:.2f}%", flush=True)
+            cap_str = f"  mktcap ${market_cap/1e12:.2f}T" if market_cap else ""
+            print(f"  {ticker:6s}  ${curr:>9.2f}  {sign}{pct:.2f}%{cap_str}", flush=True)
         except Exception as exc:
             msg = f"{ticker}: {exc}"
             print(f"  ERROR  {msg}", flush=True)

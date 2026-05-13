@@ -7,7 +7,8 @@
       "name": "Apple Inc.",
       "price": 294.8,
       "change": "+0.72%",
-      "changePositive": true
+      "changePositive": true,
+      "marketCap": 4329832448000
     },
     {
       "rank": 2,
@@ -15,7 +16,8 @@
       "name": "Microsoft Corp.",
       "price": 407.77,
       "change": "-1.18%",
-      "changePositive": false
+      "changePositive": false,
+      "marketCap": 3029092794368
     },
     {
       "rank": 3,
@@ -23,7 +25,8 @@
       "name": "NVIDIA Corp.",
       "price": 220.78,
       "change": "+0.61%",
-      "changePositive": true
+      "changePositive": true,
+      "marketCap": 5366057795584
     },
     {
       "rank": 4,
@@ -31,7 +34,8 @@
       "name": "Amazon.com Inc.",
       "price": 265.82,
       "change": "-1.18%",
-      "changePositive": false
+      "changePositive": false,
+      "marketCap": 2859454955520
     },
     {
       "rank": 5,
@@ -39,7 +43,8 @@
       "name": "Alphabet Inc.",
       "price": 387.35,
       "change": "-0.33%",
-      "changePositive": false
+      "changePositive": false,
+      "marketCap": 4692917092352
     },
     {
       "rank": 6,
@@ -47,7 +52,8 @@
       "name": "Meta Platforms Inc.",
       "price": 603.0,
       "change": "+0.69%",
-      "changePositive": true
+      "changePositive": true,
+      "marketCap": 1530669301760
     },
     {
       "rank": 7,
@@ -55,7 +61,8 @@
       "name": "Tesla Inc.",
       "price": 433.45,
       "change": "-2.60%",
-      "changePositive": false
+      "changePositive": false,
+      "marketCap": 1627918565376
     },
     {
       "rank": 8,
@@ -63,7 +70,8 @@
       "name": "Berkshire Hathaway",
       "price": 484.96,
       "change": "+1.13%",
-      "changePositive": true
+      "changePositive": true,
+      "marketCap": 1045987786752
     },
     {
       "rank": 9,
@@ -71,7 +79,8 @@
       "name": "Eli Lilly & Co.",
       "price": 989.87,
       "change": "+2.37%",
-      "changePositive": true
+      "changePositive": true,
+      "marketCap": 882708054016
     },
     {
       "rank": 10,
@@ -79,7 +88,8 @@
       "name": "JPMorgan Chase",
       "price": 304.88,
       "change": "+1.63%",
-      "changePositive": true
+      "changePositive": true,
+      "marketCap": 816929439744
     }
   ]
 }

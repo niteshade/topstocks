@@ -28,7 +28,7 @@
       padding: 48px 24px 80px;
     }
 
-    .container { max-width: 720px; margin: 0 auto; }
+    .container { max-width: 860px; margin: 0 auto; }
 
     /* Header */
     header {
@@ -196,10 +196,11 @@
         <th class="sortable" data-col="name">Company</th>
         <th class="sortable right" data-col="price">Price</th>
         <th class="sortable right" data-col="change">Day</th>
+        <th class="sortable right" data-col="marketCap">Mkt Cap</th>
       </tr>
     </thead>
     <tbody id="tableBody">
-      <tr class="state-row"><td colspan="5">Loading…</td></tr>
+      <tr class="state-row"><td colspan="6">Loading…</td></tr>
     </tbody>
   </table>
 
@@ -255,7 +256,7 @@
       });
     } catch {
       document.getElementById("tableBody").innerHTML =
-        `<tr class="state-row"><td colspan="5">Unable to load data.</td></tr>`;
+        `<tr class="state-row"><td colspan="6">Unable to load data.</td></tr>`;
     }
   }
 
@@ -267,7 +268,15 @@
         <td class="name">${esc(s.name)}</td>
         <td class="price">$${esc(s.price.toFixed(2))}</td>
         <td class="change ${s.changePositive ? "up" : "down"}">${esc(s.change)}</td>
+        <td class="price">${fmtCap(s.marketCap)}</td>
       </tr>`).join("");
+  }
+
+  function fmtCap(n) {
+    if (!n) return "—";
+    if (n >= 1e12) return "$" + (n / 1e12).toFixed(2) + "T";
+    if (n >= 1e9)  return "$" + (n / 1e9).toFixed(2) + "B";
+    return "$" + (n / 1e6).toFixed(0) + "M";
   }
 
   function esc(s) {
