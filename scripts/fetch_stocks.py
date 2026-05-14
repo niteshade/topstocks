@@ -3,24 +3,36 @@ import sys
 import datetime
 import yfinance as yf
 
-STOCKS = [
+TICKERS = [
+    ("NVDA",  "NVIDIA Corp."),
+    ("GOOGL", "Alphabet Inc. (Class A)"),
+    ("GOOG",  "Alphabet Inc. (Class C)"),
     ("AAPL",  "Apple Inc."),
     ("MSFT",  "Microsoft Corp."),
-    ("NVDA",  "NVIDIA Corp."),
     ("AMZN",  "Amazon.com Inc."),
-    ("GOOGL", "Alphabet Inc."),
-    ("META",  "Meta Platforms Inc."),
+    ("AVGO",  "Broadcom Inc."),
     ("TSLA",  "Tesla Inc."),
-    ("BRK-B", "Berkshire Hathaway"),
+    ("META",  "Meta Platforms Inc."),
+    ("WMT",   "Walmart Inc."),
+    ("BRK-B", "Berkshire Hathaway (B)"),
+    ("BRK-A", "Berkshire Hathaway (A)"),
     ("LLY",   "Eli Lilly & Co."),
+    ("MU",    "Micron Technology"),
     ("JPM",   "JPMorgan Chase"),
+    ("AMD",   "Advanced Micro Devices"),
+    ("XOM",   "Exxon Mobil Corp."),
+    ("INTC",  "Intel Corp."),
+    ("V",     "Visa Inc."),
+    ("JNJ",   "Johnson & Johnson"),
 ]
 
+THRESHOLD = 1_000_000_000_000  # $1 trillion
+
 def fetch():
-    results = []
+    qualified = []
     errors = []
 
-    for rank, (ticker, name) in enumerate(STOCKS, start=1):
+    for ticker, name in TICKERS:
         try:
             t = yf.Ticker(ticker)
             hist = t.history(period="5d")
@@ -32,17 +44,21 @@ def fetch():
             pct  = (curr - prev) / prev * 100
             sign = "+" if pct >= 0 else ""
             market_cap = t.info.get("marketCap") or None
-            results.append({
-                "rank": rank,
-                "ticker": ticker,
-                "name": name,
-                "price": round(curr, 2),
-                "change": f"{sign}{pct:.2f}%",
-                "changePositive": pct >= 0,
-                "marketCap": market_cap,
-            })
-            cap_str = f"  mktcap ${market_cap/1e12:.2f}T" if market_cap else ""
-            print(f"  {ticker:6s}  ${curr:>9.2f}  {sign}{pct:.2f}%{cap_str}", flush=True)
+
+            if market_cap and market_cap >= THRESHOLD:
+                qualified.append({
+                    "ticker": ticker,
+                    "name": name,
+                    "price": round(curr, 2),
+                    "change": f"{sign}{pct:.2f}%",
+                    "changePositive": pct >= 0,
+                    "marketCap": market_cap,
+                })
+                print(f"  ✓ {ticker:6s}  ${curr:>10.2f}  {sign}{pct:.2f}%  ${market_cap/1e12:.2f}T", flush=True)
+            else:
+                cap_str = f"${market_cap/1e9:.0f}B" if market_cap else "N/A"
+                print(f"  – {ticker:6s}  below threshold ({cap_str})", flush=True)
+
         except Exception as exc:
             msg = f"{ticker}: {exc}"
             print(f"  ERROR  {msg}", flush=True)
@@ -52,11 +68,16 @@ def fetch():
         print(f"\n✗ {len(errors)} ticker(s) failed: {', '.join(errors)}", flush=True)
         sys.exit(1)
 
+    # Sort by market cap descending and assign ranks
+    qualified.sort(key=lambda s: s["marketCap"], reverse=True)
+    for i, s in enumerate(qualified, start=1):
+        s["rank"] = i
+
     today = datetime.date.today().isoformat()
-    payload = {"updated": today, "stocks": results}
+    payload = {"updated": today, "stocks": qualified}
     with open("data/stocks.json", "w") as f:
         json.dump(payload, f, indent=2)
-    print(f"\n✓ Wrote {len(results)} stocks → data/stocks.json  ({today})", flush=True)
+    print(f"\n✓ {len(qualified)}/{len(TICKERS)} stocks above $1T → data/stocks.json  ({today})", flush=True)
 
 if __name__ == "__main__":
     fetch()
