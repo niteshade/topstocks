@@ -1,6 +1,7 @@
 import json
 import sys
 import datetime
+from zoneinfo import ZoneInfo
 import yfinance as yf
 
 TICKERS = [
@@ -29,6 +30,12 @@ TICKERS = [
 THRESHOLD = 1_000_000_000_000  # $1 trillion
 
 def fetch():
+    et_now = datetime.datetime.now(ZoneInfo("America/New_York"))
+    print(f"  Current ET time: {et_now.strftime('%H:%M %Z')}", flush=True)
+    if et_now.hour < 16:
+        print("  Market not closed yet — skipping run.", flush=True)
+        sys.exit(0)
+
     qualified = []
     errors = []
 

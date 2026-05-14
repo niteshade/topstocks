@@ -2,8 +2,10 @@ name: Update Stock Data
 
 on:
   schedule:
-    # Runs at 8:01 PM UTC = 4:01 PM ET (1 min after market close); EDT = UTC-4
+    # 20:01 UTC = 4:01 PM EDT (summer) — script guards against early run in EST
     - cron: "1 20 * * 1-5"
+    # 21:01 UTC = 4:01 PM EST (winter) — redundant but harmless in summer
+    - cron: "1 21 * * 1-5"
   workflow_dispatch: # allows manual trigger from GitHub UI
 
 jobs:
