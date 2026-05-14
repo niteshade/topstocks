@@ -2,8 +2,8 @@ name: Update Stock Data
 
 on:
   schedule:
-    # Runs at 9:30 PM UTC = 5:30 PM ET, after US market close (4 PM ET)
-    - cron: "30 21 * * 1-5"
+    # Runs at 8:01 PM UTC = 4:01 PM ET (1 min after market close); EDT = UTC-4
+    - cron: "1 20 * * 1-5"
   workflow_dispatch: # allows manual trigger from GitHub UI
 
 jobs:
