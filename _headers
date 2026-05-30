@@ -1,0 +1,3 @@
+# Prevent Cloudflare from caching stocks.json so users always get fresh data
+/topstocks/data/stocks.json
+  Cache-Control: no-cache, no-store, must-revalidate

@@ -82,7 +82,7 @@ def fetch():
 
     today = datetime.date.today().isoformat()
     payload = {"updated": today, "stocks": qualified}
-    with open("data/stocks.json", "w") as f:
+    with open("topstocks/data/stocks.json", "w") as f:
         json.dump(payload, f, indent=2)
     print(f"\n✓ {len(qualified)}/{len(TICKERS)} stocks above $1T → data/stocks.json  ({today})", flush=True)
 

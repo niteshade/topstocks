@@ -1,0 +1,5 @@
+# Redirect root to the topstocks app
+/     /topstocks    302
+
+# Redirect old subdomain (handled via Cloudflare Redirect Rule, but belt-and-suspenders)
+https://topstocks.bluechipboard.com/*    https://bluechipboard.com/topstocks/:splat    301
