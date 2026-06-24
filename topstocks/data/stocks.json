@@ -1,112 +1,112 @@
 {
-  "updated": "2026-06-23",
+  "updated": "2026-06-24",
   "stocks": [
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corp.",
-      "price": 200.04,
-      "change": "-4.13%",
+      "price": 199.0,
+      "change": "-0.52%",
       "changePositive": false,
-      "marketCap": 4845168754688,
+      "marketCap": 4819978813440,
       "rank": 1
     },
     {
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "price": 294.3,
-      "change": "-0.91%",
+      "price": 293.08,
+      "change": "-0.41%",
       "changePositive": false,
-      "marketCap": 4322488745984,
+      "marketCap": 4304570155008,
       "rank": 2
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc. (Class A)",
-      "price": 346.13,
-      "change": "-1.02%",
+      "price": 345.29,
+      "change": "-0.24%",
       "changePositive": false,
-      "marketCap": 4223676710912,
+      "marketCap": 4213426356224,
       "rank": 3
     },
     {
       "ticker": "GOOG",
       "name": "Alphabet Inc. (Class C)",
-      "price": 346.08,
-      "change": "-0.77%",
+      "price": 345.04,
+      "change": "-0.30%",
       "changePositive": false,
-      "marketCap": 4223066177536,
+      "marketCap": 4210375786496,
       "rank": 4
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
-      "price": 373.94,
-      "change": "+1.80%",
-      "changePositive": true,
-      "marketCap": 2777788973056,
+      "price": 365.46,
+      "change": "-2.27%",
+      "changePositive": false,
+      "marketCap": 2714795769856,
       "rank": 5
     },
     {
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
-      "price": 234.11,
-      "change": "+0.57%",
+      "price": 234.27,
+      "change": "+0.07%",
       "changePositive": true,
-      "marketCap": 2518346891264,
+      "marketCap": 2520068128768,
       "rank": 6
     },
     {
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
-      "price": 380.15,
-      "change": "-3.06%",
-      "changePositive": false,
-      "marketCap": 1808594108416,
+      "price": 382.07,
+      "change": "+0.51%",
+      "changePositive": true,
+      "marketCap": 1817728778240,
       "rank": 7
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla Inc.",
-      "price": 381.61,
-      "change": "-5.79%",
-      "changePositive": false,
-      "marketCap": 1433221726208,
-      "rank": 8
     },
     {
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "price": 562.2,
-      "change": "-0.29%",
+      "price": 557.67,
+      "change": "-0.81%",
       "changePositive": false,
-      "marketCap": 1427101581312,
+      "marketCap": 1415602503680,
+      "rank": 8
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla Inc.",
+      "price": 375.53,
+      "change": "-1.59%",
+      "changePositive": false,
+      "marketCap": 1410386886656,
       "rank": 9
     },
     {
       "ticker": "MU",
       "name": "Micron Technology",
-      "price": 1051.77,
-      "change": "-13.18%",
+      "price": 1048.51,
+      "change": "-0.31%",
       "changePositive": false,
-      "marketCap": 1186116796416,
+      "marketCap": 1182440357888,
       "rank": 10
-    },
-    {
-      "ticker": "BRK-B",
-      "name": "Berkshire Hathaway (B)",
-      "price": 492.81,
-      "change": "+0.84%",
-      "changePositive": true,
-      "marketCap": 1062919077888,
-      "rank": 11
     },
     {
       "ticker": "BRK-A",
       "name": "Berkshire Hathaway (A)",
-      "price": 737800.0,
-      "change": "+0.46%",
+      "price": 742900.0,
+      "change": "+0.69%",
       "changePositive": true,
-      "marketCap": 1060884840448,
+      "marketCap": 1068218122240,
+      "rank": 11
+    },
+    {
+      "ticker": "BRK-B",
+      "name": "Berkshire Hathaway (B)",
+      "price": 494.81,
+      "change": "+0.41%",
+      "changePositive": true,
+      "marketCap": 1067232788480,
       "rank": 12
     }
   ]
