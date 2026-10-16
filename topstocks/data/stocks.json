@@ -1,122 +1,113 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "stocks": [
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corp.",
-      "price": 217.23,
-      "change": "-1.84%",
+      "price": 214.13,
+      "change": "-1.43%",
       "changePositive": false,
-      "marketCap": 5245452681216,
+      "marketCap": 5170596937728,
       "rank": 1
     },
     {
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "price": 342.0,
-      "change": "-0.28%",
-      "changePositive": false,
-      "marketCap": 4991209701376,
+      "price": 343.46,
+      "change": "+0.43%",
+      "changePositive": true,
+      "marketCap": 5012516765696,
       "rank": 2
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc. (Class A)",
-      "price": 349.22,
-      "change": "+0.45%",
-      "changePositive": true,
-      "marketCap": 4270937866240,
+      "price": 340.59,
+      "change": "-2.47%",
+      "changePositive": false,
+      "marketCap": 4165393448960,
       "rank": 3
     },
     {
       "ticker": "GOOG",
       "name": "Alphabet Inc. (Class C)",
-      "price": 344.91,
-      "change": "+0.37%",
-      "changePositive": true,
-      "marketCap": 4218226999296,
+      "price": 336.91,
+      "change": "-2.32%",
+      "changePositive": false,
+      "marketCap": 4120387518464,
       "rank": 4
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
-      "price": 539.44,
-      "change": "+1.08%",
-      "changePositive": true,
-      "marketCap": 4005636341760,
+      "price": 529.05,
+      "change": "-1.93%",
+      "changePositive": false,
+      "marketCap": 3928485003264,
       "rank": 5
     },
     {
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
-      "price": 254.76,
-      "change": "+0.27%",
-      "changePositive": true,
-      "marketCap": 2747921072128,
+      "price": 250.0,
+      "change": "-1.87%",
+      "changePositive": false,
+      "marketCap": 2696578334720,
       "rank": 6
     },
     {
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "price": 736.72,
-      "change": "-0.11%",
+      "price": 709.33,
+      "change": "-3.72%",
       "changePositive": false,
-      "marketCap": 1876798734336,
+      "marketCap": 1807009841152,
       "rank": 7
     },
     {
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
-      "price": 344.33,
-      "change": "-0.55%",
+      "price": 328.75,
+      "change": "-4.52%",
       "changePositive": false,
-      "marketCap": 1643703959552,
+      "marketCap": 1569330823168,
       "rank": 8
     },
     {
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "price": 362.44,
-      "change": "-1.29%",
+      "price": 354.72,
+      "change": "-2.13%",
       "changePositive": false,
-      "marketCap": 1431474012160,
+      "marketCap": 1400983519232,
       "rank": 9
-    },
-    {
-      "ticker": "BRK-A",
-      "name": "Berkshire Hathaway (A)",
-      "price": 789486.0,
-      "change": "-0.01%",
-      "changePositive": false,
-      "marketCap": 1126707101696,
-      "rank": 10
     },
     {
       "ticker": "BRK-B",
       "name": "Berkshire Hathaway (B)",
-      "price": 525.68,
-      "change": "-0.13%",
-      "changePositive": false,
-      "marketCap": 1125328355328,
+      "price": 532.02,
+      "change": "+1.21%",
+      "changePositive": true,
+      "marketCap": 1138900467712,
+      "rank": 10
+    },
+    {
+      "ticker": "BRK-A",
+      "name": "Berkshire Hathaway (A)",
+      "price": 798000.0,
+      "change": "+1.08%",
+      "changePositive": true,
+      "marketCap": 1138857738240,
       "rank": 11
     },
     {
       "ticker": "LLY",
       "name": "Eli Lilly & Co.",
-      "price": 1251.61,
-      "change": "+3.55%",
+      "price": 1257.03,
+      "change": "+0.43%",
       "changePositive": true,
-      "marketCap": 1116112420864,
+      "marketCap": 1120945700864,
       "rank": 12
-    },
-    {
-      "ticker": "MU",
-      "name": "Micron Technology",
-      "price": 931.24,
-      "change": "+1.87%",
-      "changePositive": true,
-      "marketCap": 1053626531840,
-      "rank": 13
     }
   ]
 }
