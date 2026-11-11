@@ -1,122 +1,113 @@
 {
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "stocks": [
     {
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "price": 350.69,
-      "change": "+2.43%",
-      "changePositive": true,
-      "marketCap": 5096291172352,
+      "price": 348.51,
+      "change": "-0.62%",
+      "changePositive": false,
+      "marketCap": 5064611069952,
       "rank": 1
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corp.",
-      "price": 178.67,
-      "change": "-4.27%",
+      "price": 168.89,
+      "change": "-5.47%",
       "changePositive": false,
-      "marketCap": 4314344194048,
+      "marketCap": 4078186790912,
       "rank": 2
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
-      "price": 545.18,
-      "change": "+2.75%",
-      "changePositive": true,
-      "marketCap": 4048612753408,
+      "price": 533.16,
+      "change": "-2.20%",
+      "changePositive": false,
+      "marketCap": 3959349575680,
       "rank": 3
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc. (Class A)",
-      "price": 288.15,
-      "change": "+1.18%",
-      "changePositive": true,
-      "marketCap": 3542515974144,
+      "price": 287.38,
+      "change": "-0.27%",
+      "changePositive": false,
+      "marketCap": 3533049692160,
       "rank": 4
     },
     {
       "ticker": "GOOG",
       "name": "Alphabet Inc. (Class C)",
-      "price": 286.01,
-      "change": "+0.73%",
-      "changePositive": true,
-      "marketCap": 3516206940160,
+      "price": 284.92,
+      "change": "-0.38%",
+      "changePositive": false,
+      "marketCap": 3502806663168,
       "rank": 5
     },
     {
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
-      "price": 266.93,
-      "change": "+2.94%",
+      "price": 270.87,
+      "change": "+1.48%",
       "changePositive": true,
-      "marketCap": 2886350929920,
+      "marketCap": 2928954572800,
       "rank": 6
     },
     {
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "price": 641.37,
-      "change": "+5.12%",
+      "price": 641.39,
+      "change": "+0.00%",
       "changePositive": true,
-      "marketCap": 1639876001792,
+      "marketCap": 1639927119872,
       "rank": 7
     },
     {
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
-      "price": 319.48,
-      "change": "+8.78%",
+      "price": 331.98,
+      "change": "+3.91%",
       "changePositive": true,
-      "marketCap": 1525079343104,
+      "marketCap": 1584749740032,
       "rank": 8
     },
     {
       "ticker": "TSLA",
       "name": "Tesla Inc.",
-      "price": 378.05,
-      "change": "+5.54%",
+      "price": 379.78,
+      "change": "+0.46%",
       "changePositive": true,
-      "marketCap": 1494340075520,
+      "marketCap": 1501178494976,
       "rank": 9
     },
     {
       "ticker": "LLY",
       "name": "Eli Lilly & Co.",
-      "price": 1411.95,
-      "change": "+4.28%",
+      "price": 1432.29,
+      "change": "+1.44%",
       "changePositive": true,
-      "marketCap": 1257687351296,
+      "marketCap": 1275805171712,
       "rank": 10
-    },
-    {
-      "ticker": "BRK-B",
-      "name": "Berkshire Hathaway (B)",
-      "price": 575.25,
-      "change": "+0.76%",
-      "changePositive": true,
-      "marketCap": 1231443329024,
-      "rank": 11
     },
     {
       "ticker": "BRK-A",
       "name": "Berkshire Hathaway (A)",
-      "price": 853500.0,
-      "change": "-0.36%",
-      "changePositive": false,
-      "marketCap": 1218064023552,
-      "rank": 12
+      "price": 875655.0,
+      "change": "+2.60%",
+      "changePositive": true,
+      "marketCap": 1240230395904,
+      "rank": 11
     },
     {
-      "ticker": "WMT",
-      "name": "Walmart Inc.",
-      "price": 125.66,
-      "change": "+0.11%",
+      "ticker": "BRK-B",
+      "name": "Berkshire Hathaway (B)",
+      "price": 583.34,
+      "change": "+1.41%",
       "changePositive": true,
-      "marketCap": 1000012251136,
-      "rank": 13
+      "marketCap": 1239317086208,
+      "rank": 12
     }
   ]
 }
