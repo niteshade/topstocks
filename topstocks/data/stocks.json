@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "stocks": [
     {
       "ticker": "AAPL",
@@ -7,7 +7,7 @@
       "price": 352.78,
       "change": "-0.98%",
       "changePositive": false,
-      "marketCap": 5126663176192,
+      "marketCap": 5114019971072,
       "rank": 1
     },
     {
@@ -16,7 +16,7 @@
       "price": 517.99,
       "change": "-1.12%",
       "changePositive": false,
-      "marketCap": 3846694502400,
+      "marketCap": 3759436726272,
       "rank": 2
     },
     {
@@ -25,7 +25,7 @@
       "price": 156.14,
       "change": "-4.12%",
       "changePositive": false,
-      "marketCap": 3770312556544,
+      "marketCap": 3753892642816,
       "rank": 3
     },
     {
@@ -34,7 +34,7 @@
       "price": 283.72,
       "change": "-4.07%",
       "changePositive": false,
-      "marketCap": 3488053460992,
+      "marketCap": 3444778729472,
       "rank": 4
     },
     {
@@ -43,7 +43,7 @@
       "price": 281.26,
       "change": "-3.85%",
       "changePositive": false,
-      "marketCap": 3457810432000,
+      "marketCap": 3412814462976,
       "rank": 5
     },
     {
@@ -52,17 +52,8 @@
       "price": 257.75,
       "change": "-3.34%",
       "changePositive": false,
-      "marketCap": 2787086172160,
+      "marketCap": 2788600315904,
       "rank": 6
-    },
-    {
-      "ticker": "META",
-      "name": "Meta Platforms Inc.",
-      "price": 626.41,
-      "change": "-2.38%",
-      "changePositive": false,
-      "marketCap": 1601254981632,
-      "rank": 7
     },
     {
       "ticker": "AVGO",
@@ -70,7 +61,16 @@
       "price": 333.4,
       "change": "-3.92%",
       "changePositive": false,
-      "marketCap": 1591528259584,
+      "marketCap": 1630671994880,
+      "rank": 7
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms Inc.",
+      "price": 626.41,
+      "change": "-2.38%",
+      "changePositive": false,
+      "marketCap": 1581980975104,
       "rank": 8
     },
     {
@@ -79,7 +79,7 @@
       "price": 379.74,
       "change": "-2.69%",
       "changePositive": false,
-      "marketCap": 1501020291072,
+      "marketCap": 1502482792448,
       "rank": 9
     },
     {
@@ -88,7 +88,7 @@
       "price": 1431.67,
       "change": "-0.82%",
       "changePositive": false,
-      "marketCap": 1275252965376,
+      "marketCap": 1260894158848,
       "rank": 10
     },
     {
@@ -97,7 +97,7 @@
       "price": 592.85,
       "change": "-0.02%",
       "changePositive": false,
-      "marketCap": 1259521179648,
+      "marketCap": 1246582931456,
       "rank": 11
     },
     {
@@ -106,7 +106,7 @@
       "price": 887540.0,
       "change": "-0.25%",
       "changePositive": false,
-      "marketCap": 1257063710720,
+      "marketCap": 1244276981760,
       "rank": 12
     },
     {
@@ -115,7 +115,7 @@
       "price": 128.41,
       "change": "+0.25%",
       "changePositive": true,
-      "marketCap": 1018772389888,
+      "marketCap": 1014814212096,
       "rank": 13
     }
   ]
