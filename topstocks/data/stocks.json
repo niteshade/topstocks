@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "stocks": [
     {
       "ticker": "AAPL",
@@ -7,7 +7,7 @@
       "price": 351.91,
       "change": "-0.25%",
       "changePositive": false,
-      "marketCap": 5114019971072,
+      "marketCap": 5121867513856,
       "rank": 1
     },
     {
@@ -16,7 +16,7 @@
       "price": 506.24,
       "change": "-2.27%",
       "changePositive": false,
-      "marketCap": 3759436726272,
+      "marketCap": 3774660476928,
       "rank": 2
     },
     {
@@ -25,7 +25,7 @@
       "price": 155.46,
       "change": "-0.44%",
       "changePositive": false,
-      "marketCap": 3753892642816,
+      "marketCap": 3645231071232,
       "rank": 3
     },
     {
@@ -34,7 +34,7 @@
       "price": 280.2,
       "change": "-1.24%",
       "changePositive": false,
-      "marketCap": 3444778729472,
+      "marketCap": 3472317218816,
       "rank": 4
     },
     {
@@ -43,7 +43,7 @@
       "price": 277.6,
       "change": "-1.30%",
       "changePositive": false,
-      "marketCap": 3412814462976,
+      "marketCap": 3432484962304,
       "rank": 5
     },
     {
@@ -52,7 +52,7 @@
       "price": 257.89,
       "change": "+0.05%",
       "changePositive": true,
-      "marketCap": 2788600315904,
+      "marketCap": 2895109423104,
       "rank": 6
     },
     {
@@ -61,7 +61,7 @@
       "price": 341.6,
       "change": "+2.46%",
       "changePositive": true,
-      "marketCap": 1630671994880,
+      "marketCap": 1690103578624,
       "rank": 7
     },
     {
@@ -70,7 +70,7 @@
       "price": 618.87,
       "change": "-1.20%",
       "changePositive": false,
-      "marketCap": 1581980975104,
+      "marketCap": 1575615987712,
       "rank": 8
     },
     {
@@ -79,7 +79,7 @@
       "price": 380.11,
       "change": "+0.10%",
       "changePositive": true,
-      "marketCap": 1502482792448,
+      "marketCap": 1516752338944,
       "rank": 9
     },
     {
@@ -88,17 +88,8 @@
       "price": 1415.55,
       "change": "-1.13%",
       "changePositive": false,
-      "marketCap": 1260894158848,
+      "marketCap": 1231677685760,
       "rank": 10
-    },
-    {
-      "ticker": "BRK-B",
-      "name": "Berkshire Hathaway (B)",
-      "price": 586.76,
-      "change": "-1.03%",
-      "changePositive": false,
-      "marketCap": 1246582931456,
-      "rank": 11
     },
     {
       "ticker": "BRK-A",
@@ -106,7 +97,16 @@
       "price": 878512.0,
       "change": "-1.02%",
       "changePositive": false,
-      "marketCap": 1244276981760,
+      "marketCap": 1222943965184,
+      "rank": 11
+    },
+    {
+      "ticker": "BRK-B",
+      "name": "Berkshire Hathaway (B)",
+      "price": 586.76,
+      "change": "-1.03%",
+      "changePositive": false,
+      "marketCap": 1220791238656,
       "rank": 12
     },
     {
@@ -115,7 +115,7 @@
       "price": 127.52,
       "change": "-0.69%",
       "changePositive": false,
-      "marketCap": 1011711279104,
+      "marketCap": 1010441912320,
       "rank": 13
     }
   ]
