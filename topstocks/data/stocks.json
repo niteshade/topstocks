@@ -108,15 +108,6 @@
       "changePositive": false,
       "marketCap": 1203503366144,
       "rank": 12
-    },
-    {
-      "ticker": "WMT",
-      "name": "Walmart Inc.",
-      "price": 127.36,
-      "change": "-0.13%",
-      "changePositive": false,
-      "marketCap": 1003036278784,
-      "rank": 13
     }
   ]
 }
