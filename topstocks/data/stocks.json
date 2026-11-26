@@ -1,121 +1,121 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "stocks": [
     {
       "ticker": "AAPL",
       "name": "Apple Inc.",
-      "price": 354.07,
-      "change": "+1.43%",
+      "price": 355.58,
+      "change": "+0.43%",
       "changePositive": true,
-      "marketCap": 5145409617920,
+      "marketCap": 5167353167872,
       "rank": 1
-    },
-    {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corp.",
-      "price": 155.38,
-      "change": "-5.86%",
-      "changePositive": false,
-      "marketCap": 3751960903680,
-      "rank": 2
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
-      "price": 496.13,
-      "change": "+0.74%",
-      "changePositive": true,
-      "marketCap": 3684357898240,
+      "price": 489.93,
+      "change": "-1.25%",
+      "changePositive": false,
+      "marketCap": 3638315450368,
+      "rank": 2
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corp.",
+      "price": 149.3,
+      "change": "-3.91%",
+      "changePositive": false,
+      "marketCap": 3605147156480,
       "rank": 3
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc. (Class A)",
-      "price": 279.05,
-      "change": "-1.08%",
+      "price": 273.1,
+      "change": "-2.13%",
       "changePositive": false,
-      "marketCap": 3430640517120,
+      "marketCap": 3357491331072,
       "rank": 4
     },
     {
       "ticker": "GOOG",
       "name": "Alphabet Inc. (Class C)",
-      "price": 276.58,
-      "change": "-1.06%",
+      "price": 270.98,
+      "change": "-2.02%",
       "changePositive": false,
-      "marketCap": 3400274280448,
+      "marketCap": 3331428188160,
       "rank": 5
     },
     {
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
-      "price": 252.29,
-      "change": "-1.21%",
+      "price": 244.43,
+      "change": "-3.12%",
       "changePositive": false,
-      "marketCap": 2728046362624,
+      "marketCap": 2643055345664,
       "rank": 6
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla Inc.",
-      "price": 384.68,
-      "change": "-0.20%",
-      "changePositive": false,
-      "marketCap": 1520546873344,
-      "rank": 7
     },
     {
       "ticker": "META",
       "name": "Meta Platforms Inc.",
-      "price": 589.82,
-      "change": "-1.30%",
+      "price": 609.89,
+      "change": "+3.40%",
+      "changePositive": true,
+      "marketCap": 1559025942528,
+      "rank": 7
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla Inc.",
+      "price": 380.14,
+      "change": "-1.18%",
       "changePositive": false,
-      "marketCap": 1507722133504,
+      "marketCap": 1502601543680,
       "rank": 8
     },
     {
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
-      "price": 301.08,
-      "change": "-3.98%",
+      "price": 300.86,
+      "change": "-0.07%",
       "changePositive": false,
-      "marketCap": 1437244456960,
+      "marketCap": 1436194177024,
       "rank": 9
     },
     {
       "ticker": "LLY",
       "name": "Eli Lilly & Co.",
-      "price": 1407.59,
-      "change": "+3.15%",
-      "changePositive": true,
-      "marketCap": 1253803819008,
+      "price": 1392.22,
+      "change": "-1.09%",
+      "changePositive": false,
+      "marketCap": 1240112955392,
       "rank": 10
-    },
-    {
-      "ticker": "BRK-B",
-      "name": "Berkshire Hathaway (B)",
-      "price": 577.21,
-      "change": "+0.85%",
-      "changePositive": true,
-      "marketCap": 1226293772288,
-      "rank": 11
     },
     {
       "ticker": "BRK-A",
       "name": "Berkshire Hathaway (A)",
-      "price": 865490.0,
-      "change": "+0.73%",
+      "price": 870150.0,
+      "change": "+0.54%",
       "changePositive": true,
-      "marketCap": 1225833316352,
+      "marketCap": 1232433446912,
+      "rank": 11
+    },
+    {
+      "ticker": "BRK-B",
+      "name": "Berkshire Hathaway (B)",
+      "price": 579.32,
+      "change": "+0.37%",
+      "changePositive": true,
+      "marketCap": 1230776565760,
       "rank": 12
     },
     {
       "ticker": "WMT",
       "name": "Walmart Inc.",
-      "price": 132.31,
-      "change": "+2.11%",
-      "changePositive": true,
-      "marketCap": 1049713967104,
+      "price": 131.94,
+      "change": "-0.28%",
+      "changePositive": false,
+      "marketCap": 1049988956160,
       "rank": 13
     }
   ]
